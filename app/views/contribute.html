@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Contribute" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Contribute a Component</h1>
+    
+    <p class="govuk-body-l">
+      Help other teams by sharing your reusable components. Follow this guide to propose adding your component to the Hub.
+    </p>
+
+    <h2 class="govuk-heading-l">Before you start</h2>
+    
+    <p class="govuk-body">Your component should meet these criteria:</p>
+    
+    <ul class="govuk-list govuk-list--bullet">
+      <li>It's reusable across multiple Defra services or teams</li>
+      <li>It follows GDS and Defra design and development standards</li>
+      <li>It has clear documentation and examples</li>
+      <li>Your team can commit to maintaining it</li>
+      <li>It's accessible (WCAG 2.1 AA compliant)</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">What you need to provide</h2>
+
+    <h3 class="govuk-heading-m">Component information</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Name:</strong> Clear, descriptive name for your component</li>
+      <li><strong>Description:</strong> Brief explanation of what it does and its benefits</li>
+      <li><strong>Category:</strong> Platform, Forms, Maps, Authentication, Payments, Communications, or other</li>
+      <li><strong>Status:</strong> Active, Beta, or Deprecated</li>
+    </ul>
+
+    <h3 class="govuk-heading-m">Team information</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Owner:</strong> Team or individual responsible for the component</li>
+      <li><strong>Contact:</strong> Email address for support and questions</li>
+      <li><strong>Commitment:</strong> Confirmation your team will maintain the component</li>
+    </ul>
+
+    <h3 class="govuk-heading-m">Documentation</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Documentation link:</strong> URL to comprehensive documentation</li>
+      <li><strong>Repository link:</strong> URL to source code repository</li>
+      <li><strong>Examples:</strong> Working examples or demo applications</li>
+      <li><strong>Getting started guide:</strong> How teams can start using your component</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">How to submit</h2>
+
+   <p class="govuk-body-l">
+      Simply submit a pull request to the <a href="https://github.com/defra/core-component-hub" class="govuk-link">core-component-hub</a> repository.
+    </p>
+
+    <h2 class="govuk-heading-l">Ongoing responsibilities</h2>
+
+    <p class="govuk-body">Once your component is in the Hub, you'll need to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Keep documentation up to date</li>
+      <li>Respond to support requests from other teams</li>
+      <li>Update the component status every 6 months</li>
+      <li>Notify us of any major changes or if the component becomes deprecated</li>
+    </ul>
+
+    <div class="govuk-button-group">
+      <a href="mailto:core-components@defra.gov.uk?subject=Component%20Submission" class="govuk-button" data-module="govuk-button">
+        Submit a component
+      </a>
+      <a href="/components" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Browse existing components
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

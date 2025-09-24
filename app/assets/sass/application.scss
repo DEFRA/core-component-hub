@@ -4,3 +4,39 @@
 // 
 
 // Add extra styles here
+
+// App masthead component
+.app-masthead {
+  background: govuk-colour("blue");
+  color: govuk-colour("white");
+  padding-top: govuk-spacing(6);
+  padding-bottom: govuk-spacing(6);
+}
+
+.app-masthead__title {
+  color: govuk-colour("white");
+  margin-bottom: govuk-spacing(3);
+}
+
+.app-masthead__description {
+  color: govuk-colour("white");
+  font-size: 19px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.app-masthead__image {
+  max-width: 100%;
+  height: auto;
+}
+
+// App width container to match GOV.UK Design System
+.app-width-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 govuk-spacing(3);
+  
+  @include govuk-media-query($from: tablet) {
+    padding: 0 govuk-spacing(6);
+  }
+}

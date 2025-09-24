@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Components" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="govuk-!-margin-top-4" aria-labelledby="components-nav-heading">
+      
+        <h3 class="govuk-body-m govuk-!-margin-top-4">Platform</h3>
+      <ul class="govuk-list">
+        {% for component in data.components %}
+          {% if component.category == 'Platform' %}
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/components/{{ component.id }}">
+              {{ component.name }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <h3 class="govuk-body-m govuk-!-margin-top-4">Capabilities</h3>
+      <ul class="govuk-list">
+        {% for component in data.components %}
+          {% if component.category == 'Capabilities' %}
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/components/{{ component.id }}">
+              {{ component.name }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <h3 class="govuk-body-m govuk-!-margin-top-4">Frontend</h3>
+      <ul class="govuk-list">
+        {% for component in data.components %}
+          {% if component.category == 'Frontend' %}
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/components/{{ component.id }}">
+              {{ component.name }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <h3 class="govuk-body-m govuk-!-margin-top-4">Backend</h3>
+      <ul class="govuk-list">
+        {% for component in data.components %}
+          {% if component.category == 'Backend' %}
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/components/{{ component.id }}">
+              {{ component.name }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Components</h1>
+    
+    <p class="govuk-body-l">
+      Reusable components across Defra. Each component is maintained by its respective team and ready for adoption.
+    </p>
+    
+  
+  </div>
+</div>
+
+{% endblock %}

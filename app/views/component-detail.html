@@ -1,0 +1,145 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Components" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="govuk-!-margin-top-4" aria-labelledby="components-nav-heading">
+      
+      <h3 class="govuk-body-m govuk-!-margin-top-4">Platform</h3>
+      <ul class="govuk-list">
+        {% for component in data.components %}
+          {% if component.category == 'Platform' %}
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/components/{{ component.id }}"{% if component.id == componentId %} aria-current="page"{% endif %}>
+              {{ component.name }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <h3 class="govuk-body-m govuk-!-margin-top-4">Capabilities</h3>
+      <ul class="govuk-list">
+        {% for component in data.components %}
+          {% if component.category == 'Capabilities' %}
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/components/{{ component.id }}"{% if component.id == componentId %} aria-current="page"{% endif %}>
+              {{ component.name }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <h3 class="govuk-body-m govuk-!-margin-top-4">Frontend</h3>
+      <ul class="govuk-list">
+        {% for component in data.components %}
+          {% if component.category == 'Frontend' %}
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/components/{{ component.id }}"{% if component.id == componentId %} aria-current="page"{% endif %}>
+              {{ component.name }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <h3 class="govuk-body-m govuk-!-margin-top-4">Backend</h3>
+      <ul class="govuk-list">
+        {% for component in data.components %}
+          {% if component.category == 'Backend' %}
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/components/{{ component.id }}"{% if component.id == componentId %} aria-current="page"{% endif %}>
+              {{ component.name }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="govuk-grid-column-three-quarters">
+    <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/components">Components</a>
+        </li>
+      </ol>
+    </nav>
+
+    {% if component %}
+    <h1 class="govuk-heading-xl">
+      {{ component.name }}
+      {% if component.status == 'Active' %}
+      <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">{{ component.status }}</strong>
+      {% elif component.status == 'Beta' %}
+      <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-left-2">{{ component.status }}</strong>
+      {% elif component.status == 'Deprecated' %}
+      <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-2">{{ component.status }}</strong>
+      {% endif %}
+    </h1>
+    
+    <p class="govuk-body-l">{{ component.description }}</p>
+    
+    <div class="govuk-button-group govuk-!-margin-bottom-6">
+      <a href="{{ component.documentation }}" class="govuk-button" target="_blank" rel="noopener noreferrer">
+        View documentation
+      </a>
+      <a href="{{ component.repository }}" class="govuk-button govuk-button--secondary" target="_blank" rel="noopener noreferrer">
+        View repository
+      </a>
+    </div>
+
+    <h2 class="govuk-heading-l">Component details</h2>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Category</dt>
+        <dd class="govuk-summary-list__value">{{ component.category }}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Owner</dt>
+        <dd class="govuk-summary-list__value">{{ component.owner }}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Contact</dt>
+        <dd class="govuk-summary-list__value">
+          <a href="mailto:{{ component.contact }}" class="govuk-link">{{ component.contact }}</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Status</dt>
+        <dd class="govuk-summary-list__value">
+          {% if component.status == 'Active' %}
+          <strong class="govuk-tag govuk-tag--green">{{ component.status }}</strong>
+          <p class="govuk-body-s govuk-!-margin-top-2">This component is actively maintained and ready for production use.</p>
+          {% elif component.status == 'Beta' %}
+          <strong class="govuk-tag govuk-tag--yellow">{{ component.status }}</strong>
+          <p class="govuk-body-s govuk-!-margin-top-2">This component is in beta. It's being tested and may change.</p>
+          {% elif component.status == 'Deprecated' %}
+          <strong class="govuk-tag govuk-tag--red">{{ component.status }}</strong>
+          <p class="govuk-body-s govuk-!-margin-top-2">This component is deprecated and should not be used for new projects.</p>
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+
+    
+    {% else %}
+    <h1 class="govuk-heading-xl">Component not found</h1>
+    <p class="govuk-body">The component you're looking for doesn't exist.</p>
+    <p class="govuk-body">
+      <a href="/components" class="govuk-link">Browse all components</a>
+    </p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

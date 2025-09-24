@@ -1,0 +1,133 @@
+Core Component Hub – MVP PRD
+Overview
+
+The Core Component Hub is a directory of reusable components across Defra.
+It helps teams find, understand and adopt existing components (e.g. Core Delivery Platform, Defra Forms, Defra Maps).
+
+The Hub does not replace these products. It acts as a signpost to them, with clear ownership, documentation and guidance on when to use them.
+
+Objectives
+
+Provide a single trusted entry point for all Defra core components.
+
+Reduce duplication by helping teams discover and reuse before building.
+
+Improve consistency and compliance with Defra and GDS standards.
+
+Make it clear that components are supported, maintained and safe to adopt.
+
+Scope (MVP)
+In scope
+
+A web-based hub (internal) built using GOV.UK Design System.
+
+Component catalogue page with:
+
+List of approved components (Core Delivery Platform, Defra Forms, Defra Maps + 2–3 others).
+
+Each item shows:
+
+Name
+
+Short description
+
+Category (e.g. frontend, data, API, maps, forms)
+
+Owner/contact
+
+Link to documentation / repo
+
+Status badge (Active, Beta, Deprecated)
+
+Search and filter by category or status.
+
+Landing page that explains the purpose:
+
+What the Hub is
+
+What it isn’t
+
+How to use it
+
+Contribution guide: simple guidance on how teams can propose adding their component.
+
+Out of scope (MVP)
+
+Hosting components directly.
+
+Automated health checks (uptime, versioning).
+
+Integration with CI/CD pipelines.
+
+Usage analytics.
+
+External/public access.
+
+Users & Needs
+Primary users
+
+Delivery teams (developers, product managers, designers, BAs):
+
+Need to quickly find existing, approved components.
+
+Need confidence the component is maintained and trusted.
+
+Secondary users
+
+Component owners:
+
+Need visibility so their component is reused.
+
+Need to provide documentation in a consistent format.
+
+User journeys (MVP)
+
+Developer searching for mapping solution
+
+Goes to Hub → sees Defra Maps → clicks through to docs → adopts instead of building new.
+
+Product manager checking forms options
+
+Goes to Hub → filters by “Forms” → sees Defra Forms → checks status → uses it.
+
+Team lead with a reusable API
+
+Reads contribution guidance → submits component for consideration.
+
+Success criteria (MVP)
+
+All major existing components (CDP, Forms, Maps) are clearly listed.
+
+Teams report using the Hub to discover components.
+
+Stakeholders confirm the Hub makes it clear what’s in/out of scope.
+
+At least 2 new teams adopt an existing component through the Hub in the first quarter.
+
+Non-functional requirements
+
+Uses GOV.UK Design System for consistent look and feel.
+
+Accessible (WCAG 2.1 AA).
+
+Works on modern browsers and mobile devices.
+
+Lightweight and fast (pages <1s load).
+
+Governance
+
+Owner: Defra Core Components team.
+
+Content updates: owners must provide:
+
+Description, documentation link, contact.
+
+Status updates (every 6 months).
+
+Review cycle: quarterly check to keep content accurate.
+
+Risks & mitigations
+Risk	Mitigation
+Teams see Hub as “another product”	Clear messaging: it’s a directory/signpost, not a platform
+Outdated info reduces trust	Regular review cycle, clear ownership for each component
+Teams ignore Hub	Promote at stand-ups, in onboarding, and Defra developer comms

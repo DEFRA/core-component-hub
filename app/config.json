@@ -1,5 +1,5 @@
 {
-  "serviceName": "core-component-hub",
+  "serviceName": "Core Component Hub",
   "plugins": {
     "govuk-frontend": {
       "rebrand": true
